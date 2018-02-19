@@ -28,7 +28,7 @@ module.exports = function (app, db) {
             if (err) {
                 res.send({ 'error': 'An error has occurred' });
             } else {
-                res.send('Note ' + id + ' deleted!');
+                res.send('Note ' + id + ' Read!');
             }
         });
     });
@@ -46,6 +46,7 @@ module.exports = function (app, db) {
         })
     })
 
+    //Update
     app.put('/notes/:id', (req, res) => {
         const id = req.params.id;
         const details = { '_id': new ObjectID(id) };
