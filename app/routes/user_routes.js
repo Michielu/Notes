@@ -26,7 +26,15 @@ module.exports = function (app, db) {
 
     //Have to have this in front of all the 'u/:id' or it'll think 'all' is an id
     app.get('/u/all', (req, res) => {
-        db.collection("users").find({}).toArray(function (err, result) {
+        db.collection("users").find({}).toArray((err, result) => {
+            if (err) res.send(error);
+            res.send(result);
+        });
+    });
+
+    //Only get username and notes 
+    app.get('/u/a', (req, res) => {
+        db.collection("users").find({}, { _id: 0, username: 1, notes: 1 }).toArray((err, result) => {
             if (err) res.send(error);
             res.send(result);
         });
@@ -62,7 +70,9 @@ module.exports = function (app, db) {
     //Update
     app.put('/u/:id', (req, res) => {
         const id = req.params.id;
-        const details = { '_id': new ObjectID(id) };
+        const details = {
+            '_id': new ObjectID(id),
+        };
         //Do some checks and stuff here
         if (!req.body.password || !req.body.username || !req.body.email || !req.body.notes) {
             res.send({ 'error': 'Something is missing' });
