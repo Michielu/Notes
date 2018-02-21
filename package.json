@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Michielu/Notes#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "create-react-app": "^1.5.2",
     "express": "^4.16.2",
     "mongodb": "^2.2.16"
   },
