@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PopulateData from './populateData';
+import NoteButton from './NoteButton';
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,14 +8,9 @@ class App extends Component {
     super(props);
     this.state = { users: [], text: "" };
 
-    this.addText = this.addText.bind(this);
   }
 
 
-
-  addText() {
-    this.setState({ text: "ahh" });
-  }
 
   render() {
     return (
@@ -28,8 +23,7 @@ class App extends Component {
           <p className="App-intro">
             To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-          <button class="firstbutton" onCLick={this.addText}>Get users</button>
-          <PopulateData></PopulateData>
+          <NoteButton data="none"></NoteButton>
         </body>
       </div>
     );
