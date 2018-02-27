@@ -19,12 +19,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <body>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-          <NoteButton data="none"></NoteButton>
-        </body>
+        <NoteButton data="none"></NoteButton>
       </div>
     );
   }

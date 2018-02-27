@@ -1,13 +1,14 @@
 export default getUsers;
-
+var request = require('request');
 
 async function getUsers() {
-    console.log("b");
-    let users = await makeCall();
-    console.log("after await");
-    return users;
-}
-
-function makeCall() {
-    return "return users";
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(`[{
+                username: kerno,
+            },{
+                username: mich,
+            }]`);
+        }, 2000);
+    });;
 }

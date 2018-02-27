@@ -10,9 +10,9 @@ export default class PopulateData extends React.Component {
 
     }
 
-    populate_user() {
+    async populate_user() {
         console.log("button pressed");
-        let users = getUsers();
+        let users = await getUsers();
         console.log("Users : ", users);
         this.setState({
             data: users
@@ -24,7 +24,7 @@ export default class PopulateData extends React.Component {
             <div>
                 <button onClick={() => { this.populate_user() }}>Get Users</button>
                 <div className="populate-users">
-                    <p class="text-users">{this.state.data}</p>
+                    <p className="text-users">{this.state.data}</p>
                 </div>
             </div>
         );
