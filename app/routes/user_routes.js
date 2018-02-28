@@ -26,7 +26,7 @@ module.exports = function (app, db) {
 
     //Have to have this in front of all the 'u/:id' or it'll think 'all' is an id
     app.get('/u/all', (req, res) => {
-        db.collection("users").find({}).toArray((err, result) => {
+        db.collection("users").find({}, { _id: 0, username: 1 }).toArray((err, result) => {
             if (err) res.send(error);
             res.send(result);
         });
