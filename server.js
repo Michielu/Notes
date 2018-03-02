@@ -9,6 +9,14 @@ const port = 8000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//Enable CORS access 
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+})
+
 MongoClient.connect(db.url, (err, database) => {
     if (err) return console.log(err)
     require('./app/routes')(app, database);
