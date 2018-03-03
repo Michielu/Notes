@@ -14,8 +14,9 @@ export default class PopulateData extends React.Component {
         console.log("button pressed");
         let users = await getUsers();
         console.log("Users : ", users);
+
         this.setState({
-            data: users
+            data: users[0].username
         })
     }
 
