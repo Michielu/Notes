@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import getUsers from './retreiveInfo';
 
-export default class PopulateData extends React.Component {
+export default class PopulateData extends Component {
     constructor(props) {
         super(props);
         this.state = props;
