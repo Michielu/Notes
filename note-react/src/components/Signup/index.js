@@ -10,6 +10,10 @@ export default class Signup extends React.Component {
 
     }
 
+    componentWillMount() {
+
+    }
+
     checkPasswords() {
         console.log("button pressed");
         const form = document.getElementById('signup-form');
