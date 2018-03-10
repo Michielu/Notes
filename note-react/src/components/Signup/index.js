@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import createUser from './createUser';
 
 export default class Signup extends React.Component {
     constructor(props) {
@@ -7,12 +8,9 @@ export default class Signup extends React.Component {
 
         this.checkPasswords = this.checkPasswords.bind(this);
         this.hashPassword = this.hashPassword.bind(this);
-
+        this.testButton = this.testButton.bind(this);
     }
 
-    componentWillMount() {
-
-    }
 
     checkPasswords() {
         console.log("button pressed");
@@ -35,6 +33,7 @@ export default class Signup extends React.Component {
                 pass: "invalid"
             })
         }
+        // console.log("Button pressed");
     }
 
     hashPassword(pass) {
@@ -42,6 +41,11 @@ export default class Signup extends React.Component {
         //After hashing, create account with it! 
     }
 
+    testButton() {
+        console.log("will this refresh");
+        createUser("ImaUser", "imaPassword");
+
+    }
 
 
     render() {
@@ -51,14 +55,15 @@ export default class Signup extends React.Component {
                     <h5>Username</h5><br />
                     <input type="text" name="username" value={this.state.username} />
                     <h5>Password</h5><br />
-                    <input type="text" name="password1" value={this.state.pass} />
+                    <input type="text" name="password1" />
                     <h5>Retype Password</h5><br />
-                    <input type="text" name="password2" value={this.state.pass} />
+                    <input type="text" name="password2" />
                     <div className="populate-users">
                         <p className="text-users">{this.state.data}</p>
                     </div>
                     <button onClick={() => { this.checkPasswords() }}>Create Users</button>
                 </form>
+                <button onClick={() => { this.testButton() }}>Create user</button>
             </div>
         );
     }
