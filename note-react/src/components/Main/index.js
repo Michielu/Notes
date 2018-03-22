@@ -1,29 +1,15 @@
-import React, { Component } from 'react';
-import NoteButton from '../NoteButton';
-import Signup from '../Signup'
-import './style.css';
+import React from 'react';
+// import NoteButton from '../NoteButton';
+// import Signup from '../Signup'
+// import './style.css';
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { users: [], text: "" };
 
-    }
+const Main = () => (
+    <div>
+        <p>hi</p>
+    </div>
+);
 
-    render() {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <h1 className="App-title">Welcome to React</h1>
-                </header>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-                <NoteButton data="none"></NoteButton>
-                <Signup></Signup>
-            </div>
-        );
-    }
-}
 
-export default App;
+export default Main;

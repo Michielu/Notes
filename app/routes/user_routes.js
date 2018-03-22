@@ -6,7 +6,7 @@ var ObjectID = require('mongodb').ObjectID;
  * @param {*} app Express instance 
  * @param {*} db Database
  */
-module.exports = function (app, db) {
+module.exports = function (app, db) { 
     //Create
     app.post('/u', (req, res) => {
         const user = {

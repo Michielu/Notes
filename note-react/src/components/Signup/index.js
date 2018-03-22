@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import createUser from './createUser';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default class Signup extends React.Component {
     constructor(props) {
@@ -47,7 +48,6 @@ export default class Signup extends React.Component {
 
     }
 
-
     render() {
         return (
             <div>
@@ -61,9 +61,12 @@ export default class Signup extends React.Component {
                     <div className="populate-users">
                         <p className="text-users">{this.state.data}</p>
                     </div>
-                    <button onClick={() => { this.checkPasswords() }}>Create Users</button>
+                    {/* <button onClick={() => { this.checkPasswords() }}>Create Users</button> */}
                 </form>
                 <button onClick={() => { this.testButton() }}>Create user</button>
+                <li>
+                    <Link to="/notes">notes</Link>
+                </li>
             </div>
         );
     }
